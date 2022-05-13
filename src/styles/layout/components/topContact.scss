@@ -1,0 +1,58 @@
+.topContact{
+    width: 100%;
+    color: #ffffff;
+    margin-top: 0.3rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+
+    @media screen and (max-width: 1000px){
+        flex-direction: column;
+    }
+
+    .itemContact{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &:hover{
+            color: rgb(223, 74, 10);
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 1000px){
+            justify-content: right;
+            font-size: 1rem;
+        }
+
+        .imgContact{
+            font-size: 1.4rem;
+
+            @media screen and (max-width: 1000px){
+                font-size: 1.1rem;
+            }
+        }
+
+        .counter{
+            width:15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: -7px;
+            margin-top: -18px;
+
+
+        }
+    }
+}

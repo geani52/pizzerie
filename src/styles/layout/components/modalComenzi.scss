@@ -1,0 +1,511 @@
+.background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(0);
+    z-index: 10000;
+
+    &.active {
+        transform: scale(1);
+
+        .bodyPopup {
+            margin-top: 0;
+            transition: 0.5s;
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        @media screen and (max-width: 500px){
+            height: -webkit-fill-available;
+        }
+    }
+    
+
+    .bodyPopup {
+        width: 700px;
+        max-height: 80vh;
+        background: #fff;
+        border-radius: 10px;
+        margin-top: -100%;
+        margin-left: 5%;
+        margin-right: 5%;
+        z-index: 10000;
+        padding: 1rem;
+        position: relative;
+        color: #000000;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        overflow: auto;
+
+        @media screen and (max-width: 500px) {
+            padding: 3%;
+            max-height: 80vh;
+        }
+
+        .titlePop {
+            font-weight: 100;
+            font-size: 1.5vw;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            margin-top: 3%;
+            text-align: center;
+
+            @media screen and (max-width: 500px) {
+               font-size: 1rem;
+               margin-top: 5%;
+               margin-bottom: 1%;
+               letter-spacing: 1px;
+               padding: 0;
+            }
+        }
+        .body{
+            
+            &.hide{
+                display:none;
+            }
+        .closeX {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-right: 1rem;
+            font-size: 2rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .titlePop {
+            font-weight: 100;
+            font-size: 35px;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            margin-top: 3%;
+            text-align: center;
+
+            @media screen and (max-width: 500px) {
+               font-size: 1rem;
+               margin-top: 5%;
+               margin-bottom: 1%;
+               letter-spacing: 1px;
+               padding: 0;
+            }
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            .imgProd {
+                width: 15%;
+                img {
+                    width: 100%;
+                }
+
+                @media screen and (max-width: 500px) {
+                    width: 25%;
+                }
+            }
+            .text{
+                .price {
+                    text-align: left;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+
+                    @media screen and (max-width: 500px) {
+                        font-size: 0.8rem;
+                    }
+                }
+
+                .description{
+                    @media screen and (max-width: 500px) {
+                        font-size: 0.7rem;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+
+        .buttonContainer {
+            text-align: center;
+            .button {
+                box-shadow: inset 0px 1px 0px 0px #f29c93;
+                background: linear-gradient(to bottom, #ff1a00 5%, #ce0100 100%);
+                background-color: #ff1a00;
+                border-radius: 6px;
+                border: 1px solid #d83526;
+                display: inline-block;
+                cursor: pointer;
+                color: #ffffff;
+                font-family: Arial;
+                font-size: 15px;
+                font-weight: bold;
+                padding: 6px 24px;
+                text-decoration: none;
+                text-shadow: 0px 1px 0px #9e1e14;
+                width: 300px;
+                height: 50px;
+
+                @media screen and (max-width: 500px) {
+                    width: 70%;
+                    font-size: 0.8rem;
+                    height: 40px;
+                }
+
+                &:hover {
+                    background: linear-gradient(to bottom, #ce0100 5%, #ff1a00 100%);
+                    background-color: #ce0100;
+                }
+
+                &:active {
+                    position: relative;
+                    top: 1px;
+                }
+            }
+        }
+
+        .bake{
+            display: none;
+            width: 100%;
+            text-align: center;
+
+            &.show{
+                display: block;
+                
+                img{
+                    width: 50%;
+                }
+            }
+        }
+
+        .selectPizza {
+            display: flex;
+            padding: 1rem;
+            justify-content: center;
+            @media screen and (max-width: 500px) {
+                font-size: 0.8rem;
+            }
+            .css-b62m3t-container {
+                width: 90%;
+            }
+            .select{
+                width: 100% !important;
+            }
+        }
+
+        .totalPrice {
+            margin-top: 3rem;
+            @media screen and (max-width: 500px) {
+                margin-top: 0;
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .extra {
+            .itemsExtra {
+                color: red;
+                font-weight: bold;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 0.7rem;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .itemExtra {
+                display: block;
+                margin-left: 1rem;
+            }
+        }
+
+        .cantitateCart {
+            display: flex;
+            justify-content: center;
+            font-size: 1rem;
+            margin: 5%;
+
+            .btnCantitate {
+                width: 30px;
+                height: 40px;
+                padding: 0;
+                background-color: rgb(247, 247, 247);
+                border: 1px solid rgb(212, 212, 212);
+                font-size: 1.5rem;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 0.8rem;
+                    width: 25%;
+                    height: 25px;
+                }
+
+                @media screen and (max-width: 800px) {
+                    font-size: 1.2rem;
+                    height: 30px;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgb(235, 235, 235);
+                }
+
+                &.clear{
+                    font-size: 90%;
+                    color: red;
+                    @media screen and (max-width: 500px) {
+                    font-size: 0.7rem;
+                    }
+                }
+            }
+
+            .showCantitate {
+                width: 30px;
+                height: 38px;
+                padding: 0;
+                background-color: rgb(255, 255, 255);
+                border-top: 1px solid rgb(212, 212, 212);
+                border-bottom: 1px solid rgb(212, 212, 212);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 0.6rem;
+                    width: 20px;
+                    height: 23px;
+                }
+
+                @media screen and (max-width: 800px) {
+                    height: 28px;
+                }
+            }
+        }
+
+        .cantitate{
+            @extend .cantitateCart;
+
+            @media screen and (max-width: 500px) {
+                font-size: 0.8rem;
+
+                .btnCantitate{
+                    width: 30px;
+                }
+
+                .showCantitate{
+                    font-size: 0.8rem;
+                    width: 30px;
+                    height: 28px;
+            }
+            }
+            
+            
+        }
+
+        
+
+        //cart
+        .imgCart {
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            img {
+                width: 50%;
+            }
+        }
+
+        .produseCos {
+            .headerTitle {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                @media screen and (max-width: 500px) {
+                    font-size: 0.8rem;
+                }
+                .produs {
+                    width: 60%;
+                    @media screen and (max-width: 500px) {
+                        width: 50%;
+                    }
+                }
+                .pret {
+                    width: 20%;
+                    @media screen and (max-width: 500px) {
+                        text-align: center;
+                    }
+                }
+                .cantitate1 {
+                    text-align: center;
+                    width: 20%;
+                    @media screen and (max-width: 500px) {
+                        width: 30%;
+                    }
+                }
+            }
+
+            .afisareProdCos {
+                // height: 43vh;
+                overflow: auto;
+                @media screen and (max-width: 500px) {
+                    font-size: 0.9rem;
+                    height: auto;
+                }
+
+                .prodCos {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    @media screen and (max-width: 500px) {
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .produs {
+                        display: flex;
+                        flex-direction: column;
+                        width: 60%;
+                        @media screen and (max-width: 500px) {
+                            line-height: 1;
+                            width: 50%;
+                        }
+                        .imgText {
+                            display: flex;
+                            align-items: center;
+                            padding-top: 5%;
+                            @media screen and (max-width: 500px) {
+                                padding-top: 0%;
+                                .extra{
+                                    font-size: 0.7rem;
+                                }
+                            }
+                            img {
+                                width: 20%;
+                            }
+                        }
+                    }
+
+                    .pret {
+                        display: flex;
+                        width: 20%;
+
+                        @media screen and (max-width: 500px) {
+                            justify-content: center;
+                        }
+                    }
+                    .cantitate1 {
+                        text-align: center;
+                        width: 20%;
+                        @media screen and (max-width: 500px) {
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+        }
+
+            //form
+            .center{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                &.hide{
+                    display: none;
+                }
+            .form{
+                width: 80%;
+                margin-bottom: 20px;
+                .half{
+                    display: flex;
+        
+                    .a {
+                        width: 49%;
+                    }
+                
+                    .a2 {
+                        width: 49%;
+                        margin-left: 2%;
+                        .select{
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+                .input{
+                    .fieldName{
+                        margin-top: 2%;
+                        line-height: 1.5;
+                    }
+
+                    .SDInput{
+                        height: 40px;
+                        border-radius: 5px;
+                        border: 1px solid rgb(210, 210, 210);
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding: 5px;
+                        font-size: 1rem;
+                        font-family: Poppins;
+                        &:hover{
+                            box-shadow: 0 0 0 1px #000000 !important;
+                            border: 1px solid #000000 !important;
+                        }
+                    }
+
+                    .error{
+                        color:#ff0000;
+                        margin-top: -0.2%;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                    }
+                }
+
+                .textarea{
+                    .fieldName{
+                        margin-top: 2%;
+                        line-height: 1.5;
+                    }
+
+                    textarea{
+                        width: 100%;
+                        box-sizing: border-box;
+                        border-radius: 5px;
+                        border: 1px solid rgb(210, 210, 210);
+                        padding: 5px;
+                        height: 100px;
+                        resize: none;
+                        font-size: 1rem;
+                        font-family: Poppins;
+                        &:hover{
+                            box-shadow: 0 0 0 1px #000000 !important;
+                            border: 1px solid #000000 !important;
+                        }
+                    }
+                }
+            }
+
+            .total{
+                margin: 5%;
+
+                @media screen and (max-width: 500px) {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+// .Toastify__toast-theme--colored.Toastify__toast--success{
+//     background-color: red !important;
+// }

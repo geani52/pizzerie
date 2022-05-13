@@ -1,0 +1,220 @@
+$products-count: 14;
+$photoshop-design-primary-color: #ffffff;
+.sd-section__products {
+  color: $photoshop-design-primary-color;
+  text-align: center;
+  padding: 0 2.6% 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute !important;
+  width: 140% !important;
+  margin-top: 3%;
+  margin-left: -20%;
+
+  @media screen and (max-width: 1000px){
+    width: 94% !important;
+    margin-left: 0;
+  }
+
+//   @include mobile {
+//     padding: 5% 4%;
+//   }
+
+  .sd-section__title {
+    margin-bottom: 1%;
+    line-height: 1.2;
+
+    @media screen and (max-width: 1000px){
+      font-size: 4vw;
+    }
+    @media screen and (max-width: 650px){
+      font-size: 5vw;
+    }
+
+    // @include mobile {
+    //   font-size: px-to-vw_mob(80)
+    // }
+  }
+
+  .slick {
+    &-slider {
+      margin-bottom: 5%;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      
+    //   @include responsive(mobile){
+    //       width: 80%;
+    //   }
+    }
+
+    &-slide {
+      text-align: center;
+    //   @include mobile {
+    //     -webkit-backface-visibility: hidden;
+    //   }
+
+      .sd-product {
+        opacity: 0;
+        text-align: center;
+        font-size: px-to-vw(16);
+        color: $photoshop-design-primary-color;
+        outline: none;
+        margin-top: 12%;
+        transition: opacity 0.2s linear;
+
+        &:hover{
+          cursor: pointer;
+        }
+
+        // @include responsive(mobile) {
+        //   opacity: 0;
+        // }
+
+        // @include mobile {
+        //   font-size: px-to-vw(16, 320);
+        //   margin-top: 0;
+        //   opacity: 0;
+        // }
+
+        .product {
+          padding-top: 70%;
+
+          $ids: 'margherita' 'salami' 'quattro' 'diavola' 'funghi' 'hawaiana';
+
+          @each $i in $ids {
+
+            &-#{$i} {
+              background: transparent url("../../../../src/Images/produse/#{$i}.png") no-repeat center / auto 100%;
+
+            //   @include mobile {
+            //     background-size: auto 90%;
+            //   }
+
+              //@if $i >= 12 {
+              //  background-size: 70%;
+              //  background-position-y: 20%;
+              //
+              //  @include mobile {
+              //    background-size: 75%;
+              //  }
+              //}
+            }
+
+          }
+          //@for $i from 1 through $products-count {
+          //  &-#{$i} {
+          //    background: transparent url("/images/produs-#{$i}.png") no-repeat center / auto 100%;
+          //
+          //    @include mobile {
+          //      background-size: auto 90%;
+          //    }
+          //
+          //    @if $i >= 12 {
+          //      background-size: 70%;
+          //      background-position-y: 20%;
+          //
+          //      @include mobile {
+          //        background-size: 75%;
+          //      }
+          //    }
+          //  }
+          //}
+        }
+
+        .name {
+          color: inherit;
+          margin-top: -3%;
+
+          @media screen and (max-width: 1000px){
+            font-size: 1rem;
+            line-height: 90%;
+          }
+        }
+      }
+
+      &.slick-center {
+
+        .sd-product {
+          margin-top: 0;
+
+          .product {
+            padding-top: 100%;
+            background-size: contain;
+          }
+
+          .name {
+            margin-top: -10%;
+          }
+        }
+      }
+
+      &.slick-active {
+
+        .sd-product {
+            opacity: 1;
+        }
+      }
+    }
+
+    &-arrow {
+
+      &.slick-next,
+      &.slick-prev {
+        z-index: 1;
+        outline: none;
+        width: 4vw;
+        height: 24vw;
+        // background-color: #ffffff;
+        // @include mobile{
+        //   background-color: transparent;
+        // }
+
+        &:focus, &:hover {
+          outline: none;
+          //background-color: transparent !important;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          opacity: z;
+          width: 100%;
+          height: 100%;
+        }
+
+        // @include mobile {
+        //   width: 15vw;
+        //   height: 24vw;
+        //   margin-top: -3rem;
+        // }
+
+      }
+
+      &.slick-prev {
+        // left: -50px;
+        // @include responsive(mobile) {
+        //   left: -1.5rem;
+        //   width: 12vw;
+        // }
+
+        &::before {
+          background: transparent url("../../../../src/Images/arrow_left.png") no-repeat center / contain;
+        }
+      }
+
+      &.slick-next {
+        // right: -50px;
+        // @include responsive(mobile) {
+        //   right: -1.5rem;
+        //   width: 12vw;
+        // }
+
+        // &::before {
+          background: transparent url("../../../../src/Images/arrow_right.png") no-repeat center / contain;
+        // }
+      }
+    }
+  }
+}

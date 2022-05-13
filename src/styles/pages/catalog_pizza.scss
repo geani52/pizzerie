@@ -1,0 +1,86 @@
+
+.catalogPizza{
+    width: 100%;
+    height: 73vh;
+    overflow: auto;
+    position: relative;
+
+    @media screen and (max-width: 800px){
+        height: 65vh;
+    }
+
+    .produse{
+        width: 100%;
+        border-bottom: 1px solid gray;
+        display: flex;
+        align-items: center;
+        background-color: #00000065;
+        border-top-left-radius: 100% 100%;
+
+        @media screen and (max-width: 800px){
+            flex-direction: column;
+        }
+
+        .imgProduse{
+            width: 20%;
+
+            @media screen and (max-width: 800px){
+                width: 7rem;
+            }
+
+            img{
+                width:100%;
+                padding-top: 1rem;
+            }
+
+            
+        }
+
+        .contentProduse{
+            width: 50%;
+            padding: 1rem;
+
+            @media screen and (max-width: 800px){
+                width: 90%;
+                padding: initial;
+            }
+            @media screen and (max-width: 500px){
+                font-size: 0.8rem;
+            }
+        }
+
+        .butoane{
+            width: 30%;
+            text-align: center;
+            @media screen and (max-width: 800px){
+                width: initial;
+                margin: 1rem;
+            }
+
+            .myButton {
+                box-shadow:inset 0px 1px 0px 0px #f29c93;
+                background:linear-gradient(to bottom, #ff1a00 5%, #ce0100 100%);
+                background-color:#ff1a00;
+                border-radius:6px;
+                border:1px solid #d83526;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:15px;
+                font-weight:bold;
+                padding:6px 24px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #9e1e14;
+            }
+            .myButton:hover {
+                background:linear-gradient(to bottom, #ce0100 5%, #ff1a00 100%);
+                background-color:#ce0100;
+            }
+            .myButton:active {
+                position:relative;
+                top:1px;
+            }
+        }
+    }
+}

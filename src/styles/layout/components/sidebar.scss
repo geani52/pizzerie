@@ -1,0 +1,68 @@
+.pro-sidebar{
+    border: 5px solid rgb(90, 24, 4) !important;
+    border-style: none dashed none none !important;
+    border-top-right-radius: 41% !important;
+    overflow: hidden;
+
+    &.mobile{
+        border-top-right-radius: 0% !important;
+    }
+}
+
+.pro-sidebar-inner{
+    background-image: url(../../../Images/sideBackground.jpg) !important;
+}
+
+.pro-icon-wrapper{
+    background-color: transparent !important;
+}
+
+.pro-sidebar-header{
+    padding: 0.5rem;
+    border-bottom: 0 !important;
+    .logo{
+        width:4rem;
+    }
+
+    .slogan{
+        position: absolute;
+        margin-left: 5rem;
+        margin-top: 1rem;
+        top: 0;
+        color: rgb(241, 173, 94);
+        font-size: 2.5rem;
+        line-height: 70%;
+        font-family: Hurricane;
+    }
+}
+
+.pro-sidebar-content{
+    .pro-menu-item{
+        font-size: 1.2rem !important;
+        color: #ffffff !important;
+
+        .meniuItemImg{
+            height: 2rem;
+        }
+    }
+}
+
+.pro-sidebar-footer{
+    text-align: right;
+    border-top: 0 !important;
+    .resizeIcon{
+        margin: 0.5rem;
+        font-size: 2rem;
+        transition: 0.4s;
+
+        &:hover{
+            color: rgb(241, 173, 94);
+            cursor: pointer;
+        }
+
+        &.rotate{
+            transform: rotate(180deg);
+            margin-right: 1.7rem;
+        }
+    }
+}
